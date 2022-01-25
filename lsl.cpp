@@ -41,8 +41,8 @@ int main(int argc, char **argv)
 
   auto ms =
       std::chrono::duration_cast<std::chrono::microseconds>(end - start);
-  std::cout << "lsl," << boost::num_vertices(G) << "," << s.makespan() << ","
-            << ms.count() << std::endl;
+  std::cout << "lsl," << rho << "," << boost::num_vertices(G) << "," << s.makespan() << ","
+            << ms.count() << "," << s.reconfigs.size() << "," << L << std::endl;
 
   json_path.replace_extension("svg");
 

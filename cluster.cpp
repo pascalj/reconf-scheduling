@@ -32,8 +32,9 @@ int main(int argc, char **argv)
 
   auto ms =
       std::chrono::duration_cast<std::chrono::microseconds>(end - start);
-  std::cout << "cluster," << boost::num_vertices(G) << "," << s.makespan() << ","
-            << ms.count() << std::endl;
+  std::cout << "cluster," << rho << "," << boost::num_vertices(G) << ","
+            << s.makespan() << "," << ms.count() << "," << s.reconfigs.size()
+            << std::endl;
 
   json_path.replace_extension("svg");
   export_svg(s, json_path.filename());
